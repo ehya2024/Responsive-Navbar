@@ -1,13 +1,99 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+    background-color: whitesmoke;
+}
+
+.container {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar {
+    width: 100%;
+    height: 55px;
+    background-color: gainsboro;
+    box-shadow: 0 0 8px #b8b8b8;
+    position: relative;
+}
+
+.right-navbar {
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.right-navbar button {
+    display: none;
+}
+
+.right-navbar h3 {
+    color: rebeccapurple;
+}
+
+.links-container {
+    width: fit-content;
+    transition: 300ms;
+}
+
+.links-container ul {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    gap: 0 1.5rem;
+}
+
+.links-container ul li a {
+    color: rebeccapurple;
+    font-weight: bold;
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width:767px) {
+    .right-navbar {
+        width: 100%;
+        justify-content: space-between;
+    }
+    .right-navbar button {
+        display: block;
+        cursor: pointer;
+        font-size: 24px;
+        background-color: transparent;
+        border: none;
+    }
+    .links-container {
+        position: absolute;
+        top: 65px;
+        left: 0px;
+        right: 0px;
+        width: 100%;
+        background-color: gainsboro;
+        box-shadow: 0 0 8px #b8b8b8;
+        height: 0;
+        overflow: hidden;
+    }
+    .links-container ul {
+        flex-direction: column;
+        gap: 1.2rem 0;
+        height: auto;
+        padding: 20px 0;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .links-container {
+        height: 100% !important;
+    }
 }
